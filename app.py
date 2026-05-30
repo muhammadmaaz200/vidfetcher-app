@@ -222,7 +222,8 @@ def get_file():
         return send_file(possible_file, as_attachment=True, download_name=f"{title}{ext}")
     return "File not found", 404
 
+app = app
+
 if __name__ == '__main__':
-    # Yeh line cloud deployment ke liye zaroori hai!
     port = int(os.environ.get('PORT', 5000))
     socketio.run(app, host='0.0.0.0', port=port)
